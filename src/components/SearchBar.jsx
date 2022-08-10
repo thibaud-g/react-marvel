@@ -18,4 +18,3 @@ export default function SearchBar({ handleClick, setHeroes, setError }) {
     </form>
   );
 }
-

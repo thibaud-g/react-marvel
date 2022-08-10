@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { fetchHero } from "../lib/utils";
+import { fetchHero } from "../libs/utils";
 
 export default function HeroDetails() {
   let { id } = useParams();
@@ -23,7 +23,7 @@ export default function HeroDetails() {
 
   if (hero) {
     name = hero.data.results[0].name;
-    description = hero.data.results[0].description; 
+    description = hero.data.results[0].description;
     thumbnailPath = hero.data.results[0].thumbnail.path;
     thumbnailExtension = hero.data.results[0].thumbnail.extension;
     thumbnailUrl = `${thumbnailPath}.${thumbnailExtension}`;

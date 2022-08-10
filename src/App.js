@@ -1,12 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./routes/Home";
+// Import components
 import Navbar from "./components/Navbar";
-import HeroDetails from "./routes/HeroDetails";
+import NavItem from "./components/Navbar/NavItem";
+import Logo from "./components/Navbar/Logo";
+import About from "./components/About";
+import HeroDetails from "./components/HeroDetails";
+import Home from "./components/Home";
 
-export default function App() {
+// Import dependencies
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+function App() {
   return (
     <Router>
-      <Navbar/>
+      <Navbar logo={<Logo text={"Marbabel"} />}>
+        <NavItem to={"/"} text={"Home"} />
+        
+      </Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<HeroDetails />} />
@@ -14,3 +23,5 @@ export default function App() {
     </Router>
   );
 }
+
+export default App;

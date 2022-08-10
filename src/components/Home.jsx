@@ -2,12 +2,12 @@ import React from "react";
 
 import { useState } from "react";
 
-import Container from "../components/Container";
-import SearchBar from "../components/SearchBar";
-import Grid from "../components/Grid"
-import Card from "../components/Card";
+import Container from "./Container";
+import SearchBar from "./SearchBar";
+import Grid from "./Grid";
+import Card from "./Card";
 
-import { fetchHeroes } from "../lib/utils";
+import { fetchHeros } from "../libs/utils";
 
 const IMG_FANTASTIC = "portrait_fantastic";
 
@@ -22,7 +22,7 @@ export default function Home() {
     if (args === "") return;
 
     try {
-      return await fetchHeroes(args);
+      return await fetchHeros(args);
     } catch (err) {
       return err;
     }
@@ -46,7 +46,7 @@ export default function Home() {
       </div>
       <SearchBar
         handleClick={handleClick}
-        setter={setHeroes}
+        setHeroes={setHeroes}
         setError={setError}
       />
       <h2>Results</h2>
