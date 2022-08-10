@@ -35,6 +35,7 @@ export default function Home() {
         key={hero.id}
         id={hero.id}
         thumbnail={`${hero.thumbnail.path}/${IMG_FANTASTIC}.${hero.thumbnail.extension}`}
+        description={hero.description ? hero.description : "No description"}
       />
     ));
   }
@@ -42,7 +43,7 @@ export default function Home() {
   return (
     <Container>
       <div className="title">
-        <h1>Use the Marvel API</h1>
+        <h1>Search any hero from the multiverse : </h1>
       </div>
       <SearchBar
         handleClick={handleClick}

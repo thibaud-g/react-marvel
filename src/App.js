@@ -1,8 +1,6 @@
 // Import components
 import Navbar from "./components/Navbar";
-import NavItem from "./components/Navbar/NavItem";
-import Logo from "./components/Navbar/Logo";
-import About from "./components/About";
+import NavItem from "./components/Navbar";
 import HeroDetails from "./components/HeroDetails";
 import Home from "./components/Home";
 
@@ -12,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <Navbar logo={<Logo text={"Marbabel"} />}>
+      <Navbar >
         <NavItem to={"/"} text={"Home"} />
         
       </Navbar>
