@@ -34,7 +34,7 @@ const fetchHerosBase = async() => {
   let apiKey = process.env.REACT_APP_API_KEY;
   let privateKey = process.env.REACT_APP_PRIVATE_KEY;
   let hash = getHash(ts, privateKey, apiKey);
-  let url = `${heroUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}&nameStartsWith=Hulk`;
+  let url = `${heroUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}`;
 
   try {
     let response = await fetch(url);

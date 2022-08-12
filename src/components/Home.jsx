@@ -1,13 +1,13 @@
 import React from "react";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Container from "./Container";
 import SearchBar from "./SearchBar";
 import Grid from "./Grid";
 import Card from "./Card";
 
-import { fetchHeros } from "../libs/utils";
+import { fetchHeros, fetchHerosBase } from "../libs/utils";
 
 const IMG_FANTASTIC = "portrait_fantastic";
 
@@ -15,14 +15,22 @@ export default function Home() {
   const [heroes, setHeroes] = useState([]);
   const [error, setError] = useState();
 
+  useEffect(() => {
+    fetchHerosBase()
+      .then((data) => setHeroes(data.data.results))
+      .catch((err) => console.error(err));
+  }, []);
+
   let cards;
 
   const handleClick = async (e, args) => {
     e.preventDefault();
     if (args === "") return;
-
+    
     try {
-      return await fetchHeros(args);
+      return await fetchHeros(args)
+      .then((data) => setHeroes(data.data.results))
+            .catch((err) => setError(err));
     } catch (err) {
       return err;
     }
@@ -47,8 +55,7 @@ export default function Home() {
       </div>
       <SearchBar
         handleClick={handleClick}
-        setHeroes={setHeroes}
-        setError={setError}
+        
       />
       <h2>Results</h2>
       <Grid>{cards ? cards : null}</Grid>
