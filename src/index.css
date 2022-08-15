@@ -9,12 +9,13 @@
 html {
   font-size: 16px;
   min-height: 100%;
-  font-family: Anton;
+  font-family: Dekko;
   scroll-behavior: smooth;
 }
 
 body {
   min-height: 100vh;
+  
 }
 
 .loader {
@@ -42,7 +43,7 @@ a:visited {
 }
 
 button {
-  background-color: rgb(9, 25, 62);
+background: linear-gradient(148deg, rgba(0,0,0,1) 0%, rgba(9,13,57,1) 30%, rgba(25,40,195,1) 100%);
   color: white;
   font-size: 1rem;
   font-weight: 700;
@@ -51,6 +52,8 @@ button {
   border-radius: 0.3rem;
   border: none;
   transition: 1s;
+  
+  
 }
 .button:hover{
   background-color: rgb(79, 85, 99);
@@ -81,8 +84,10 @@ form input {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(10, 10, 62);
+  background: rgb(0,0,0);
+background: linear-gradient(148deg, rgba(0,0,0,1) 0%, rgba(9,13,57,1) 30%, rgba(25,40,195,1) 100%);
   color: white;
+  
 }
 
 .navbar ul {
@@ -111,20 +116,37 @@ form{
 }
 
 .grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .card {
  display: flex;
  gap: 20px;
  border: rgb(72, 72, 72) solid 2px;
- font-family: Anton;
- transition: all 0.2s ease-in;
+ font-family: "Dekko", cursive;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+    #fff;
+  background-size: 12px, 100%;
+  /* solid border */
+  border: 0.4rem solid #000;
+ font-weight: 800;
+ transition: all 0.5s;
+ box-shadow: 10px 10px 0px black;
+ margin: 20px;
+ 
 }
+
 .card p {
   padding: 50px;
+  font-size: 22px;
 }
 .card h1{
   letter-spacing: 3px;
@@ -133,7 +155,6 @@ form{
 .title {
   text-align: center;
   font-family: 'Anton', sans-serif;
-  font-weight: 400;
   font-weight: 400;
   letter-spacing: 2px;
   
@@ -170,4 +191,17 @@ form{
   list-style: disc;
   margin-left: 1.5rem;
   font-size: 20px;
+  text-decoration: underline;
+}
+.hero__details p, .hero__details h4{
+  font-size: 22px;
+}
+.large{
+  background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
+    #fff;
+  background-size: 12px, 100%;
+  border: 0.4rem solid #000;
+box-shadow: 10px 10px 0px black;
+padding: 30px;
+font-weight: 800;
 }
