@@ -1,5 +1,5 @@
 import React from "react";
-
+import AnimatedPage from "./AnimatedPage";
 export default function Grid({ children }) {
-  return <div className="grid">{children}</div>;
+  return <AnimatedPage><div className="grid">{children}</div></AnimatedPage>;
 }

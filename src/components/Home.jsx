@@ -1,7 +1,7 @@
 import React from "react";
-
+import Loader from "./Loader";
 import { useState, useEffect } from "react";
-
+import AnimatedPage from "./AnimatedPage";
 import Container from "./Container";
 import SearchBar from "./SearchBar";
 import Grid from "./Grid";
@@ -14,6 +14,7 @@ const IMG_FANTASTIC = "portrait_fantastic";
 export default function Home() {
   const [heroes, setHeroes] = useState([]);
   const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchHerosBase()
@@ -21,6 +22,11 @@ export default function Home() {
       .catch((err) => console.error(err));
   }, []);
 
+    useEffect(() => {
+      setTimeout(() => {
+        setIsLoading(false);
+      }, 2000);
+    });
   let cards;
 
   const handleClick = async (e, args) => {
@@ -28,9 +34,14 @@ export default function Home() {
     if (args === "") return;
     
     try {
+      setIsLoading(true);
       return await fetchHeros(args)
       .then((data) => setHeroes(data.data.results))
-            .catch((err) => setError(err));
+            .catch((err) => setError(err)
+            );
+            setTimeout(() => {
+              setIsLoading(false);
+            }, 1000);
     } catch (err) {
       return err;
     }
@@ -47,9 +58,13 @@ export default function Home() {
       />
     ));
   }
-
+  
+    
   return (
+    <AnimatedPage>
     <Container>
+      
+      
       <div className="title">
         <h1>Search any hero from the multiverse : </h1>
       </div>
@@ -57,8 +72,10 @@ export default function Home() {
         handleClick={handleClick}
         
       />
-      <h2>Results</h2>
-      <Grid>{cards ? cards : null}</Grid>
+      
+      {isLoading ? <Loader /> : <Grid>{cards}</Grid>};
+      
     </Container>
+    </AnimatedPage>
   );
 }
