@@ -19,7 +19,6 @@ body {
 }
 
 .loader {
-  height: 300px;
   display: block;
   margin: 30px auto;
 }
@@ -120,7 +119,7 @@ form{
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   flex-wrap: wrap;
-  width: 80%;
+  width: 80vw;
   margin: 0 auto;
 }
 
@@ -130,7 +129,7 @@ form{
  border: rgb(72, 72, 72) solid 2px;
  font-family: "Dekko", cursive;
   text-transform: uppercase;
-  font-size: 1rem;
+  
   letter-spacing: 0.2rem;
   background: url('data:image/svg+xml;utf8,<svg width="100" height="100" transform="rotate(25)" opacity="0.3" version="1.1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g  fill="%23250E17"><circle cx="25" cy="25" r="12.5"/><circle cx="75" cy="75" r="12.5"/><circle cx="75" cy="25" r="12.5"/><circle cx="25" cy="75" r="12.5"/></g></svg>'),
     #fff;
@@ -140,12 +139,12 @@ form{
  font-weight: 800;
  transition: all 0.5s;
  box-shadow: 10px 10px 0px black;
- margin: 20px;
+ margin: 1%;
  
 }
 
 .card p {
-  padding: 50px;
+  padding: 1%;
   font-size: 22px;
 }
 .card h1{
@@ -205,3 +204,42 @@ box-shadow: 10px 10px 0px black;
 padding: 30px;
 font-weight: 800;
 }
+@media (max-width: 1024px) {
+  .card p {
+    font-size: 16px;
+  }
+  .card h1{
+    font-size: 26px;
+  }
+  .grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .card p {
+    font-size: 14px;
+  }
+  .card h1{
+    font-size: 24px;
+  }
+  .img{
+    height: 100px;
+  }
+}
+@media (max-width: 576px) {
+  .card p {
+    font-size: 12px;
+  }
+  .card h1{
+    font-size: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .card p {
+    font-size: 10px;
+  }
+  .card h1{
+    font-size: 18px;
+  }
+}
+
