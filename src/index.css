@@ -207,6 +207,7 @@ font-weight: 800;
 @media (max-width: 1024px) {
   .card p {
     font-size: 16px;
+    letter-spacing: normal;
   }
   .card h1{
     font-size: 26px;
@@ -216,6 +217,10 @@ font-weight: 800;
   }
   img{
     height: 190px;
+  }
+  .hero__details,
+  .hero__details p, .hero__details h4, .hero__details li{
+    font-size: 16px;
   }
 }
 @media (max-width: 768px) {
@@ -231,6 +236,13 @@ font-weight: 800;
   img{
     height: 180px;
   }
+  .card, .large{
+    background: none;
+  }
+  .hero__details,
+  .hero__details p, .hero__details h4, .hero__details li{
+    font-size: 14px;
+  }
 }
 @media (max-width: 576px) {
   .card p {
@@ -242,6 +254,10 @@ font-weight: 800;
   img{
     height: 170px;
   }
+  .hero__details,
+  .hero__details p, .hero__details h4, .hero__details li{
+    font-size: 12px;
+  }
 }
 @media (max-width: 480px) {
   .card p {
@@ -252,6 +268,10 @@ font-weight: 800;
   }
   img{
     height: 150px;
+  }
+  .hero__details,
+  .hero__details p, .hero__details h4, .hero__details li{
+    font-size: 10px;
   }
 }
 
