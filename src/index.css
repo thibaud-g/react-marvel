@@ -214,32 +214,44 @@ font-weight: 800;
   .grid{
     grid-template-columns: repeat(1, 1fr);
   }
+  img{
+    height: 190px;
+  }
 }
 @media (max-width: 768px) {
   .card p {
     font-size: 14px;
   }
-  .card h1{
+  .card h1, .title h1{
     font-size: 24px;
   }
   .img{
     height: 100px;
+  }
+  img{
+    height: 180px;
   }
 }
 @media (max-width: 576px) {
   .card p {
     font-size: 12px;
   }
-  .card h1{
+  .card h1, .title h1{
     font-size: 20px;
+  }
+  img{
+    height: 170px;
   }
 }
 @media (max-width: 480px) {
   .card p {
     font-size: 10px;
   }
-  .card h1{
+  .card h1, .title h1 {
     font-size: 18px;
+  }
+  img{
+    height: 150px;
   }
 }
 
